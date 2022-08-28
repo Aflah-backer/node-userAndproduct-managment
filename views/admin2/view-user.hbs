@@ -1,0 +1,39 @@
+<section>
+  <div class="container">
+    <div class="row mt-4">
+      <a href="/admin2/add-user" class="btn btn-success ml-auto">Add user</a>
+    </div>
+    <table class="table mt-5" id="userTable">
+      <thead>
+        <tr class="d-flex justify-content-between" style="border-bottom: solid 1px black;">
+          <th scope="col">No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">options</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each user}}
+        <tr class="d-flex justify-content-between" style="border-bottom: solid 1px black;">
+          <th scope="row" class="id">{{@index}}</th>
+          {{!-- <td>{{this._id}}</td> --}}
+          <td style="border-bottom-width: 0;">{{this.Name}} </td>
+          <td style="border-bottom-width: 0;">{{this.Email}} </td>
+          {{!-- <td>{{this.Price}}</td>
+          <td>{{this.Description}}</td> --}}
+          <td style="border-bottom-width: 0;">
+            <a href="/admin2/edit-user/{{this._id}} " class="btn btn-primary">Edit</a>
+            <a href="/admin2/delete-user/{{this._id}}" class="btn btn-danger"
+              onclick="return confirm('Are you want to delete{{this.name}}?') ">Delete</a>
+          </td>
+        </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+  $(document).ready(function () { $('#userTable').dataTable() })
+</script>

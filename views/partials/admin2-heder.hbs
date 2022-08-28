@@ -1,0 +1,31 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Admin Panal</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">All Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">All Orders</a>
+          </li>
+          {{! <li class="nav-item">
+            <a class="nav-link" href="#">All Users</a>
+          </li> }}
+
+        </ul>
+        {{!-- <div class="dropdown">
+          <button class="btn btn-secondary" type="button">
+            Log Out
+          </button>
+        </div> --}}
+            {{#if admin2/adminlogin}}
+            <a href="/admin2"><button class="btn btn-success">Log In</button></a>
+            {{else admin2}}
+            <a href="/admin2"><button class="btn btn-danger">Log Out</button></a>
+            {{/if}}
+      </div>
+    </div>
+  </nav>
+</header>
